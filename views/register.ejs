@@ -1,0 +1,48 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/form.css">
+<title>Register</title>
+</head>
+
+<body>
+
+<main>
+    <div class="wrapper bg-white">
+        <div class="h2 text-center">NASA API</div>
+        <div class="text-center img "><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="..." class="img-fluid"></div>
+        <div class="h4 text-muted text-center pt-2">Enter your register details</div>
+        <% if (message) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <form class="pt-3 product-form" action="/register" method ="POST">
+            <div class="form-group">
+                <div class="input-field">
+                    <span class="far fa-user p-2"></span>
+                    <input class="form-control" type="email" name="email" placeholder="john@example.com" value="<%= userInfo ? userInfo.email : "" %>" minlength="3" maxlength="32" required class="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-field">
+                    <span class="far fa-user p-2"></span>
+                    <input class="form-control" type="text" name="firstName" placeholder="First Name" value="<%= userInfo ? userInfo.firstName : "" %>" minlength="3" maxlength="32" required pattern="^\s*([A-Za-z]+)\s*$" class="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-field">
+                    <span class="far fa-user p-2"></span>
+                    <input class="form-control" type="text" name="lastName" placeholder="Last Name" value="<%= userInfo ? userInfo.lastName : "" %>" minlength="3" maxlength="32" required pattern="^\s*([A-Za-z]+)\s*$" class="">
+                </div>
+            </div>
+
+            <button class="btn btn-block text-center mx-3 my-3" type="submit">Next </button>
+
+            <div class="text-center pt-3 text-muted">Already a member? <a href="/">Login</a></div>
+
+        </form>
+    </div>
+
+</main>
+<%- include('includes/end.ejs') %>
+
+
+

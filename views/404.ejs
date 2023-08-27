@@ -1,0 +1,20 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/form.css">
+<title>404 Not Found</title>
+</head>
+
+<body>
+<main>
+    <div class="wrapper bg-white">
+        <div class="h2 text-center">404 Not Found</div>
+        <div class="text-center img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="..." class="img-fluid">
+        </div>
+        <h4 class="text-muted text-center pt-2">The page "<em><%= url %></em>" you requested cannot be found.</h4>
+        <div class="text-center pt-3">
+            <a href="/" class="btn btn-block">Return to Homepage</a>
+        </div>
+    </div>
+</main>
+<%- include('includes/end.ejs') %>
